@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="禍電街2丁目2番地のアメリカンダイナー「SO SMALL TOO BIG（ST）」。分厚い手作りバーガーと、びっくりするほど旨い餃子。">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>SO SMALL TOO BIG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&display=swap">
+<style>
+:root{
+  --bg:#FFF5E4;
+  --bg-2:#FDE9EF;
+  --paper:#FFFDF8;
+  --ink:#2B2340;
+  --muted:#6E6482;
+  --pink:#F49BBE;
+  --pink-strong:#D6417F;
+  --mint:#9FE2CF;
+  --mint-deep:#23806D;
+  --chrome:#C9CED8;
+  --chrome-light:#EEF0F4;
+  --moon:#F6D77A;
+  --gold:#D9972B;
+  --cat:#17141F;
+  --cat-line:transparent;
+  --cat-eye:#F2C94C;
+  --line:#E6D6C4;
+  --glow-pink:none;
+  --glow-mint:none;
+  --check-a:#F49BBE;
+  --check-b:#FFF5E4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#15132A;
+    --bg-2:#1D1A38;
+    --paper:#221E40;
+    --ink:#FCEFF5;
+    --muted:#ADA5C6;
+    --pink:#FF6FAA;
+    --pink-strong:#FF8DBE;
+    --mint:#5FEBCB;
+    --mint-deep:#7DF3D8;
+    --chrome:#555A74;
+    --chrome-light:#3A3858;
+    --moon:#F8DD8A;
+    --gold:#F0B550;
+    --cat:#0A0912;
+    --cat-line:#6E6A92;
+    --cat-eye:#F8DD8A;
+    --line:#3A3660;
+    --glow-pink:0 0 6px rgba(255,111,170,.8),0 0 22px rgba(255,111,170,.55);
+    --glow-mint:0 0 6px rgba(95,235,203,.8),0 0 20px rgba(95,235,203,.5);
+    --check-a:#2E2A55;
+    --check-b:#15132A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#15132A;
+  --bg-2:#1D1A38;
+  --paper:#221E40;
+  --ink:#FCEFF5;
+  --muted:#ADA5C6;
+  --pink:#FF6FAA;
+  --pink-strong:#FF8DBE;
+  --mint:#5FEBCB;
+  --mint-deep:#7DF3D8;
+  --chrome:#555A74;
+  --chrome-light:#3A3858;
+  --moon:#F8DD8A;
+  --gold:#F0B550;
+  --cat:#0A0912;
+  --cat-line:#6E6A92;
+  --cat-eye:#F8DD8A;
+  --line:#3A3660;
+  --glow-pink:0 0 6px rgba(255,111,170,.8),0 0 22px rgba(255,111,170,.55);
+  --glow-mint:0 0 6px rgba(95,235,203,.8),0 0 20px rgba(95,235,203,.5);
+  --check-a:#2E2A55;
+  --check-b:#15132A;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  font-size:16px;
+  line-height:1.85;
+}
+/* 日本語の改行：単語や文節の途中で折り返さない */
+body{line-break:strict}
+:root[data-jbreak="auto"] body{word-break:auto-phrase}
+:root[data-jbreak="wbr"] body{word-break:keep-all;overflow-wrap:break-word}
+h2,h3,.sec-head p,.lead,.msg{text-wrap:balance}
+p,dd,li,figcaption{text-wrap:pretty}
+.nw{white-space:nowrap}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink-strong);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.en{font-family:"Righteous","Arial Rounded MT Bold",system-ui,sans-serif;letter-spacing:.06em}
+.script{font-family:"Yellowtail","Brush Script MT",cursive;font-weight:400}
+.mincho{font-family:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--ink);
+}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px;flex-wrap:wrap}
+.brand{display:block;line-height:0}
+.brand img{height:46px;width:auto;display:block}
+.nav{display:flex;gap:4px 18px;flex-wrap:wrap;font-size:13px}
+.nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--pink)}
+
+/* ---------- hero ---------- */
+/* 看板はネオンなので、ヒーローだけは常に夜 */
+.hero{
+  --bg:#15132A;--ink:#FCEFF5;--muted:#ADA5C6;--mint-deep:#7DF3D8;--pink-strong:#FF8DBE;
+  --glow-mint:0 0 6px rgba(95,235,203,.8),0 0 20px rgba(95,235,203,.5);
+  position:relative;overflow:hidden;padding-block:36px 44px;color:var(--ink);
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 42%,rgba(255,111,170,.18),transparent 70%),
+    radial-gradient(ellipse 40% 40% at 78% 20%,rgba(248,221,138,.12),transparent 70%),
+    var(--bg);
+}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1}
+.hero .stars{position:absolute;inset:0;pointer-events:none}
+.hero .stars svg{position:absolute}
+.sign-board{margin:4px 0 0;width:100%;max-width:820px}
+.sign-board img{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 30px rgba(255,111,170,.25))}
+.hero .tag{font-size:clamp(28px,4.6vw,42px);color:var(--mint-deep);text-shadow:var(--glow-mint);line-height:1;margin-top:-4px}
+.hero .lead{margin:14px auto 0;max-width:34em}
+.hero .lead b{color:var(--pink-strong);font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);letter-spacing:.12em}
+.open-sign{
+  font-family:"Righteous",sans-serif;font-size:13px;letter-spacing:.2em;
+  padding:2px 10px;border:2px solid var(--mint-deep);border-radius:999px;color:var(--mint-deep);
+  text-shadow:var(--glow-mint);
+}
+.lead{font-size:17px;text-wrap:pretty}
+
+.checker{
+  height:22px;border-block:2px solid var(--ink);
+  background:
+    conic-gradient(var(--check-a) 25%,var(--check-b) 0 50%,var(--check-a) 0 75%,var(--check-b) 0) 0 0/22px 22px;
+}
+
+/* ---------- sections ---------- */
+section{padding-block:72px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-bottom:32px}
+.sec-head h2{margin:0;font-weight:400;line-height:1}
+.sec-head h2 .en{display:block;font-size:clamp(40px,7vw,64px);color:var(--ink)}
+.sec-head h2 .ja{display:block;font-size:14px;letter-spacing:.3em;color:var(--muted);margin-top:10px;font-family:"Zen Maru Gothic",sans-serif}
+.sec-head p{margin:0;max-width:26em;color:var(--muted);font-size:14px}
+
+/* ---------- menu ---------- */
+#menu{background:var(--bg-2)}
+.menu-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start}
+.board{
+  background:var(--paper);border:2px solid var(--ink);border-radius:18px;
+  padding:26px 26px 22px;box-shadow:6px 6px 0 var(--ink);
+}
+.board h3{margin:0 0 4px;display:flex;align-items:baseline;gap:12px;font-weight:400}
+.board h3 .en{font-size:26px;color:var(--pink-strong)}
+.board.chinese h3 .mincho{font-size:28px;font-weight:800;color:var(--pink-strong)}
+.board h3 small{font-size:12px;color:var(--muted);letter-spacing:.1em}
+.board h4{margin:22px 0 6px;font-family:"Righteous",sans-serif;font-weight:400;font-size:13px;letter-spacing:.24em;color:var(--mint-deep)}
+.items{list-style:none;margin:0;padding:0}
+.item{padding:10px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:0}
+.item-row{display:flex;align-items:baseline;gap:10px}
+.item-name{font-weight:700;font-size:16px}
+.item-name .en{font-weight:400;font-size:12px;color:var(--muted);margin-left:6px;letter-spacing:.08em}
+.dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.price{font-family:"Righteous",sans-serif;font-variant-numeric:tabular-nums;font-size:17px;white-space:nowrap}
+.price small{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:12px;margin-left:2px;color:var(--pink-strong)}
+.item p{margin:2px 0 0;font-size:13px;color:var(--muted);line-height:1.7}
+.item-name .opt{font-weight:400;font-size:11px;color:var(--muted);margin-left:6px;letter-spacing:.04em;white-space:nowrap}
+.opt-prices{display:flex;gap:12px;font-family:"Righteous",sans-serif;font-variant-numeric:tabular-nums;font-size:16px;white-space:nowrap}
+.opt-prices b{font-weight:400;font-size:11px;color:#2B2340;background:var(--mint);border-radius:4px;padding:0 4px;margin-right:4px;vertical-align:2px}
+.opt-prices small{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:12px;margin-left:2px;color:var(--pink-strong)}
+.board.drinks{margin-top:28px}
+.drink-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
+@media (max-width:980px){.drink-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){
+  .drink-grid{grid-template-columns:1fr}
+  .opt-prices{gap:8px;font-size:15px}
+  .item-row:has(.opt-prices){flex-wrap:wrap;row-gap:2px}
+  .item-row:has(.opt-prices) .dots{display:none}
+}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;margin-left:6px;vertical-align:2px;letter-spacing:.06em}
+.badge.house{background:var(--pink);color:#2B2340}
+.badge.season{background:var(--moon);color:#2B2340}
+.menu-note{margin:18px 0 0;font-size:13px;color:var(--muted)}
+.moon-note{
+  margin-top:18px;padding:14px 16px;border-radius:12px;border:2px solid var(--moon);
+  font-size:13px;display:flex;gap:12px;align-items:flex-start;line-height:1.7
+}
+.moon-note svg{flex:none;width:28px;height:28px}
+
+/* ---------- owner ---------- */
+.owner-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.speech{
+  position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:24px;
+  padding:28px 28px 24px;font-size:17px;line-height:2
+}
+.speech::after{
+  content:"";position:absolute;right:48px;bottom:-16px;width:26px;height:26px;background:var(--paper);
+  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)
+}
+.speech p{margin:0 0 .8em}
+.speech p:last-child{margin:0}
+.speech strong{color:var(--pink-strong)}
+.sign{margin-top:28px;text-align:right;font-size:14px;color:var(--muted)}
+.facts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.facts li{display:flex;gap:12px;font-size:14px;line-height:1.7}
+.facts li b{flex:none;font-family:"Righteous",sans-serif;font-weight:400;color:var(--mint-deep);letter-spacing:.1em;width:5.2em}
+
+.size-card{
+  background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:22px;
+  box-shadow:6px 6px 0 var(--pink)
+}
+.size-card h3{margin:0;font-family:"Righteous",sans-serif;font-weight:400;font-size:14px;letter-spacing:.2em;color:var(--muted)}
+.stage{height:230px;display:flex;align-items:flex-end;justify-content:center;border-bottom:3px solid var(--ink);margin:10px 0 0;position:relative}
+.owner-px svg{display:block;width:auto;transform-origin:50% 100%;animation:grow .45s cubic-bezier(.3,1.5,.5,1)}
+@keyframes grow{from{transform:scale(.8)}to{transform:scale(1)}}
+.ruler{position:absolute;left:0;bottom:0;top:0;display:flex;flex-direction:column;justify-content:space-between;font-size:10px;color:var(--muted);font-family:"Righteous",sans-serif}
+.size-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:14px 0 6px}
+.size-steps span{text-align:center;font-family:"Righteous",sans-serif;font-size:13px;letter-spacing:.12em;padding:4px 0;border-radius:999px;color:var(--muted)}
+.size-steps span.on{background:var(--pink);color:#2B2340}
+.size-caption{min-height:3.4em;font-size:14px;margin:6px 0 14px;line-height:1.7}
+.size-actions{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer}
+.btn{
+  flex:1 1 150px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);border-radius:999px;
+  padding:9px 14px;font-weight:700;font-size:14px;transition:transform .12s
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--pink-strong);color:#fff;border-color:var(--pink-strong)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* ---------- maoni ---------- */
+#maoni{background:var(--bg-2)}
+.cats{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:6px 4px;
+  background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:18px 14px 12px
+}
+.cat{background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;color:var(--muted)}
+.cat svg{width:100%;max-width:64px;height:auto;display:block;transition:transform .2s}
+.cat:hover svg,.cat:focus-visible svg{transform:translateY(-4px) rotate(-6deg)}
+.cat{position:relative}
+.cat.m-hop svg{animation:hop .45s ease}
+.cat.m-spin svg{animation:spin .6s ease-in-out}
+.cat.m-roll svg{animation:roll 1s ease-in-out}
+.cat.m-nobi svg{animation:nobi 1.1s ease-in-out;transform-origin:50% 100%}
+.cat.m-shake svg{animation:shake .7s linear}
+.cat.m-sleep svg{animation:sleep 2s ease-in-out;transform-origin:50% 100%}
+.cat.m-jump svg{animation:jump .8s cubic-bezier(.3,.7,.4,1)}
+.cat.m-flip svg{animation:flip .7s ease-in-out}
+.cat.m-hide svg{animation:hide 1.3s ease-in-out}
+@keyframes hop{30%{transform:translateY(-12px) scale(1.05,.95)}60%{transform:translateY(0) scale(.95,1.05)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes roll{40%{transform:translateX(-14px) rotate(-360deg)}100%{transform:translateX(0) rotate(0)}}
+@keyframes nobi{30%,70%{transform:scale(.85,1.35)}}
+@keyframes shake{10%,30%,50%,70%,90%{transform:translateX(-3px)}20%,40%,60%,80%{transform:translateX(3px)}}
+@keyframes sleep{20%,80%{transform:scale(1.12,.78) translateY(3px)}}
+@keyframes jump{40%{transform:translateY(-30px) rotate(-12deg)}75%{transform:translateY(0) scale(1.1,.9)}}
+@keyframes flip{to{transform:rotateY(360deg)}}
+@keyframes hide{25%,70%{transform:scale(0)}90%{transform:scale(1.15)}}
+.cat .bubble{
+  position:absolute;left:50%;top:-4px;z-index:3;pointer-events:none;white-space:nowrap;
+  font-family:"Zen Maru Gothic",sans-serif;font-size:11px;font-weight:700;letter-spacing:0;line-height:1.5;
+  padding:0 7px;border-radius:999px;background:var(--paper);color:var(--pink-strong);border:1.5px solid var(--ink);
+  animation:bubble 1.6s ease-out forwards
+}
+@keyframes bubble{0%{opacity:0;transform:translate(-50%,6px)}15%{opacity:1;transform:translate(-50%,-6px)}75%{opacity:1}100%{opacity:0;transform:translate(-50%,-14px)}}
+.cat span{font-family:"Righteous",sans-serif;font-size:10px;letter-spacing:.06em}
+.cats-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:13px;color:var(--muted)}
+.cats-foot output{color:var(--ink);font-weight:700}
+.replay{border:1.5px solid var(--ink);background:var(--pink);color:#2B2340;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;margin-left:8px}
+
+/* ---------- 32/32 全員集合 ---------- */
+.cats-wrap{position:relative}
+.cat{transition:transform .6s cubic-bezier(.3,1.4,.5,1),opacity .5s}
+.cats.gathering .cat{
+  transition:transform .8s cubic-bezier(.6,0,.8,.4),opacity .8s ease-in;
+  transform:translate(var(--dx,0),var(--dy,0)) scale(.3);opacity:0;pointer-events:none
+}
+.party{
+  position:absolute;inset:0;z-index:4;border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:10px;text-align:center;padding:20px 16px 24px;
+  background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--pink) 22%,var(--paper)),var(--paper) 70%);
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s
+}
+.party.show{opacity:1;visibility:visible}
+.party h3{margin:0;font-family:"Righteous",sans-serif;font-weight:400;font-size:clamp(24px,4.5vw,36px);letter-spacing:.08em;color:var(--pink-strong);text-shadow:var(--glow-pink);transform:scale(.6);opacity:0;transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .3s}
+.party.show h3{transform:scale(1);opacity:1}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:600px}
+.slot{position:relative;height:clamp(120px,22vw,170px);display:flex;align-items:flex-end;justify-content:center}
+.slot .bc{position:absolute;bottom:0;width:48%;max-width:72px;transform:scale(0);transform-origin:50% 100%;transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .4s}
+.slot .bc.l{left:0}
+.slot .bc.r{right:0}
+.slot .bc svg,.slot .hm svg{width:100%;height:auto;display:block}
+.party.phase-a .bc{transform:scale(1)}
+.party.phase-b .bc.l{transform:translateX(55%) scale(.4);opacity:0}
+.party.phase-b .bc.r{transform:translateX(-55%) scale(.4);opacity:0}
+.slot .hm{width:58%;max-width:74px;transform:scale(0);transform-origin:50% 100%;transition:transform .55s cubic-bezier(.3,1.6,.5,1)}
+.party.phase-b .hm{transform:scale(1)}
+.slot .say{position:absolute;top:0;left:50%;transform:translate(-50%,6px);white-space:nowrap;font-size:11px;font-weight:700;padding:0 7px;border-radius:999px;background:var(--paper);border:1.5px solid var(--ink);color:var(--pink-strong);opacity:0;transition:opacity .3s,transform .3s}
+.party.phase-c .say{opacity:1;transform:translate(-50%,0)}
+.party .msg{margin:0;max-width:30em;font-size:14px;line-height:1.8;opacity:0;transition:opacity .5s}
+.party .btn{flex:0 0 auto;opacity:0;transition:opacity .5s,transform .12s}
+.party.phase-c .msg,.party.phase-c .btn{opacity:1}
+.party .twinkle{position:absolute;width:14px;height:14px;opacity:0}
+.party.show .twinkle{animation:twinkle 1.8s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@media (max-width:560px){.slot .say{font-size:10px;padding:0 5px}}
+@media (prefers-reduced-motion: reduce){
+  .cat,.cats.gathering .cat,.party,.party *{transition:none!important}
+  .party.show .twinkle{animation:none;opacity:.8}
+}
+
+.merge{display:grid;grid-template-columns:auto auto auto auto auto;align-items:end;justify-content:center;gap:10px 18px;margin:44px 0 12px}
+.merge figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.merge figcaption{font-size:13px;line-height:1.5}
+.merge figcaption b{display:block;font-size:15px}
+.merge .arrow{font-family:"Righteous",sans-serif;font-size:28px;color:var(--pink-strong);align-self:center;padding-bottom:26px}
+.four{display:grid;grid-template-columns:repeat(2,34px);gap:2px}
+.four svg{width:34px;height:auto}
+.bigcat svg{width:88px;height:auto}
+.human svg{width:64px;height:auto}
+.human-px svg{width:84px;height:auto;display:block}
+.maoni-text{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.maoni-text h3{margin:0 0 6px;font-size:16px}
+.maoni-text p{margin:0;font-size:14px;color:var(--muted);line-height:1.85}
+
+/* ---------- store ---------- */
+.store-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.rocket-stage{position:relative;max-width:340px;margin:0 auto;width:100%}
+.rocket-stage svg{width:100%;height:auto;display:block}
+.petal{position:absolute;top:-6%;width:6px;height:6px;border-radius:50% 0;background:var(--gold);opacity:0;animation:drift 11s linear infinite}
+@keyframes drift{
+  0%{transform:translate(0,0) rotate(0);opacity:0}
+  10%{opacity:.8}
+  90%{opacity:.6}
+  100%{transform:translate(-30px,340px) rotate(260deg);opacity:0}
+}
+@media (prefers-reduced-motion: reduce){.petal{display:none}.cat svg{animation:none!important}.owner-px svg{animation:none}}
+.floors{list-style:none;padding:0;margin:0;border-top:2px solid var(--ink)}
+.floors li{display:grid;grid-template-columns:5.5em 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.floors .lv{font-family:"Righteous",sans-serif;font-size:22px;color:var(--pink-strong);line-height:1.2;text-shadow:var(--glow-pink)}
+.floors h3{margin:0;font-size:16px}
+.floors p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.whisper{margin-top:24px;font-size:14px;line-height:1.9;padding-left:14px;border-left:3px solid var(--gold)}
+
+/* ---------- access ---------- */
+#access{background:var(--ink);color:var(--bg)}
+#access .sec-head h2 .en{color:var(--bg)}
+#access .sec-head h2 .ja{color:color-mix(in srgb,var(--bg) 65%,var(--ink))}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.info{margin:0;display:grid;grid-template-columns:auto 1fr;gap:14px 24px;font-size:15px}
+.info dt{font-family:"Righteous",sans-serif;letter-spacing:.14em;color:var(--pink);font-size:13px;padding-top:3px}
+.info dd{margin:0}
+.info small{display:block;font-size:12px;opacity:.72;line-height:1.7}
+.map{border:2px solid var(--bg);border-radius:18px;padding:12px;overflow-x:auto}
+.map svg{width:100%;min-width:300px;height:auto;display:block}
+
+footer{background:var(--ink);color:var(--bg);text-align:center;padding-block:28px 40px;font-size:12px;border-top:1px solid color-mix(in srgb,var(--bg) 20%,var(--ink))}
+footer img{width:180px;height:auto;display:block;margin:0 auto 8px}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .menu-grid,.owner-grid,.store-grid,.access-grid{grid-template-columns:1fr}
+  .maoni-text{grid-template-columns:1fr;gap:18px}
+}
+@media (max-width:560px){
+  section{padding-block:56px}
+  .cats{grid-template-columns:repeat(4,1fr)}
+  .merge{grid-template-columns:auto auto auto;gap:8px 10px}
+  .merge .arrow:nth-of-type(2){display:none}
+  .merge .human-wrap{grid-column:1 / -1}
+  .board{padding:20px 18px 16px;box-shadow:4px 4px 0 var(--ink)}
+  .nav{font-size:12px;gap:2px 14px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="spark" viewBox="-12 -12 24 24"><path d="M0-12 L2.2-2.2 L12 0 L2.2 2.2 L0 12 L-2.2 2.2 L-12 0 L-2.2-2.2Z"/></symbol>
+    <symbol id="atom" viewBox="-20 -20 40 40">
+      <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="-18" x2="0" y2="18"/><line x1="-18" y1="0" x2="18" y2="0"/>
+        <line x1="-12" y1="-12" x2="12" y2="12"/><line x1="-12" y1="12" x2="12" y2="-12"/>
+      </g>
+      <g fill="currentColor"><circle cx="0" cy="-18" r="2.6"/><circle cx="0" cy="18" r="2.6"/><circle cx="-18" cy="0" r="2.6"/><circle cx="18" cy="0" r="2.6"/><circle r="4"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/st-logo.png" alt="SO SMALL TOO BIG DINER" width="800" height="416"></a>
+    <nav class="nav en" aria-label="ページ内">
+      <a href="#menu">MENU</a>
+      <a href="#owner">OWNER</a>
+      <a href="#maoni">MAONI</a>
+      <a href="#store">STORE</a>
+      <a href="#access">ACCESS</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="open-sign">OPEN</span><span>禍電街 2丁目2番地</span></div>
+      <h1 class="sign-board"><img src="images/st-sign.png" alt="SO SMALL TOO BIG DINER" width="1600" height="832"></h1>
+      <p class="lead">分厚い手作りバーガーと、皮付き厚切りポテト。<br>ついでに、びっくりするほど旨い餃子。<br><span class="nw">禍電街2丁目2番地</span>のアメリカンダイナー、<b class="nw">SO SMALL TOO BIG</b>。<br>みんなは<b>「ST」</b>と呼んでいます。</p>
+    </div>
+    <div class="stars" aria-hidden="true">
+      <svg style="left:6%;top:18%" width="16" height="16"><use href="#spark" width="16" height="16" fill="#F8DD8A"/></svg>
+      <svg style="left:12%;top:70%" width="10" height="10"><use href="#spark" width="10" height="10" fill="#FF8DBE"/></svg>
+      <svg style="right:8%;top:12%" width="12" height="12"><use href="#spark" width="12" height="12" fill="#7DF3D8"/></svg>
+      <svg style="right:5%;top:64%" width="18" height="18"><use href="#spark" width="18" height="18" fill="#F8DD8A"/></svg>
+      <svg style="left:26%;top:8%" width="8" height="8"><use href="#spark" width="8" height="8" fill="#FCEFF5"/></svg>
+      <svg style="right:24%;top:88%" width="9" height="9"><use href="#spark" width="9" height="9" fill="#FCEFF5"/></svg>
+    </div>
+  </div>
+
+  <div class="checker" role="presentation"></div>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">MENU</span><span class="ja">おしながき</span></h2>
+        <p>ぜんぶ店長の手作り。いわゆる「カロリー爆弾」ですが、どれもちゃんと一人前で食べ切れる量です。</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="board">
+          <h3><span class="en">AMERICAN</span><small>DINER CLASSICS</small></h3>
+
+          <h4>BURGERS</h4>
+          <ul class="items">
+            <li class="item">
+              <div class="item-row"><span class="item-name">ロケットバーガー<span class="badge house">看板</span></span><span class="dots"></span><span class="price">138<small>電</small></span></div>
+              <p>分厚い粗挽きパティ、チェダー、厚切りベーコン、焼き玉ねぎ。迷ったらまずこれ。</p>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">フルムーン・ダブルチーズ</span><span class="dots"></span><span class="price">168<small>電</small></span></div>
+              <p>パティ2枚にチーズ2枚。まんまるの満月みたいに、とろけたチーズがはみ出します。</p>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">スペースエイジ・アボカド</span><span class="dots"></span><span class="price">148<small>電</small></span></div>
+              <p>アボカド、トマト、ハラペーニョ。ミントグリーンのピックが目印。</p>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">てりやきバーガー</span><span class="dots"></span><span class="price">148<small>電</small></span></div>
+              <p>甘辛い自家製てりやきダレに、マヨネーズとたっぷりレタス。</p>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">TOO BIG バーガー</span><span class="dots"></span><span class="price">178<small>電</small></span></div>
+              <p>店長のその日の気分で全部のせ。名前ほど大きくはありません。</p>
+            </li>
+          </ul>
+
+          <h4>SIDES</h4>
+          <ul class="items">
+            <li class="item">
+              <div class="item-row"><span class="item-name">皮付き厚切りポテト</span><span class="dots"></span><span class="opt-prices"><span><b>S</b>38<small>電</small></span><span><b>M</b>48<small>電</small></span><span><b>L</b>58<small>電</small></span></span></div>
+              <p>バーガーの相棒。外はカリッと、中はほくほく。</p>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">オニオンリング</span><span class="dots"></span><span class="price">48<small>電</small></span></div>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">チキンナゲット<span class="en">5pcs</span></span><span class="dots"></span><span class="price">52<small>電</small></span></div>
+              <p>ひと口サイズのサクサク衣。ソースはバーベキューかマスタードを選べます。</p>
+            </li>
+          </ul>
+
+          <h4>SHAKES</h4>
+          <ul class="items">
+            <li class="item">
+              <div class="item-row"><span class="item-name">ストロベリー・シェイク</span><span class="dots"></span><span class="price">65<small>電</small></span></div>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">ミントチョコ・シェイク</span><span class="dots"></span><span class="price">65<small>電</small></span></div>
+            </li>
+            <li class="item">
+              <div class="item-row"><span class="item-name">バニラ・シェイク</span><span class="dots"></span><span class="price">60<small>電</small></span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="board chinese">
+            <h3><span class="mincho">中華</span><small>ボクの地元の味やで、味わってき</small></h3>
+            <h4>ALWAYS</h4>
+            <ul class="items">
+              <li class="item">
+                <div class="item-row"><span class="item-name">焼き餃子<span class="en">6pcs</span><span class="badge house">名物</span></span><span class="dots"></span><span class="price">58<small>電</small></span></div>
+                <p>ダイナーだけど、通りすがりの常連さん半分はこれが目当て。<br>皮から店長の手包み。</p>
+              </li>
+              <li class="item">
+                <div class="item-row"><span class="item-name">水餃子<span class="en">6pcs</span></span><span class="dots"></span><span class="price">58<small>電</small></span></div>
+                <p>もちもちの厚皮。黒酢と辣油でどうぞ。</p>
+              </li>
+            </ul>
+            <h4>SEASONAL — AUTUMN</h4>
+            <ul class="items">
+              <li class="item">
+                <div class="item-row"><span class="item-name">月餅<span class="badge season">中秋限定</span></span><span class="dots"></span><span class="price">38<small>電</small></span></div>
+                <p>中秋の名月の頃だけ。蓮の実あんと胡桃。</p>
+              </li>
+              <li class="item">
+                <div class="item-row"><span class="item-name">酸辣湯<span class="badge season">秋季</span></span><span class="dots"></span><span class="price">68<small>電</small></span></div>
+                <p>すっぱ辛いとろみスープ。バーガーのあとでも不思議と入ります。</p>
+              </li>
+            </ul>
+          </div>
+          <div class="moon-note">
+            <svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="12" cy="14" r="11" fill="var(--moon)"/><circle cx="17" cy="11" r="10" fill="var(--bg-2)"/></svg>
+            <span>中華メニューは季節ごとに1〜2品が入れ替わります。何が出るかは店長次第です。</span>
+          </div>
+          <p class="menu-note">価格の単位は「電」です。</p>
+        </div>
+      </div>
+
+      <div class="board drinks">
+        <h3><span class="en">DRINKS</span><small>BEVERAGES</small></h3>
+        <div class="drink-grid">
+          <div>
+            <h4>JUICE</h4>
+            <ul class="items">
+              <li class="item"><div class="item-row"><span class="item-name">100% アップル</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">100% ぶどう</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">100% パイナップル</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">100% グレープフルーツ</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">100% オレンジ</span><span class="dots"></span><span class="price">50<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">コカ・コーラ</span><span class="dots"></span><span class="price">50<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">ジンジャーエール<span class="opt">甘口／辛口</span></span><span class="dots"></span><span class="price">50<small>電</small></span></div></li>
+            </ul>
+          </div>
+          <div>
+            <h4>CREAM SODA &amp; FLOAT</h4>
+            <ul class="items">
+              <li class="item"><div class="item-row"><span class="item-name">メロンクリームソーダ</span><span class="dots"></span><span class="price">68<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">イチゴクリームソーダ</span><span class="dots"></span><span class="price">68<small>電</small></span></div></li>
+            </ul>
+          </div>
+          <div>
+            <h4>COFFEE</h4>
+            <ul class="items">
+              <li class="item"><div class="item-row"><span class="item-name">アイスコーヒー</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">ブレンド</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">アメリカン</span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">エスプレッソ</span><span class="dots"></span><span class="price">45<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">カプチーノ<span class="opt">HOT／ICE</span></span><span class="dots"></span><span class="price">55<small>電</small></span></div></li>
+            </ul>
+          </div>
+          <div>
+            <h4>TEA</h4>
+            <ul class="items">
+              <li class="item"><div class="item-row"><span class="item-name">黒ウーロン茶</span><span class="dots"></span><span class="price">45<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">アイスティー</span><span class="dots"></span><span class="price">45<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">ダージリン<span class="opt">HOT</span></span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">アールグレイ<span class="opt">HOT</span></span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">アップル＆ピーチ<span class="opt">HOT</span></span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+              <li class="item"><div class="item-row"><span class="item-name">オレンジルイボス<span class="opt">HOT・ノンカフェイン</span></span><span class="dots"></span><span class="price">48<small>電</small></span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="checker" role="presentation"></div>
+
+  <!-- OWNER -->
+  <section id="owner">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">OWNER</span><span class="ja">店長より</span></h2>
+        <p>仙人。料理はなんでもこなす。濃い味が好き。</p>
+      </div>
+
+      <div class="owner-grid">
+        <div>
+          <div class="speech">
+            <p>まいど！おおきに～<br><span class="nw">SO SMALL TOO BIG</span> ――まあ、みんな「ST」て呼ぶけど――の店長ちゃんやで。</p>
+            <p>……<strong>胡散臭いやろ？</strong> よう言われるわ。<br>まあまあ、座って座って。<br>うちのバーガーは分厚いで。ポテトも分厚い。<br>そんでもって餃子は、肉汁まで旨い。<br>ダイナーやのになんで餃子やねんって？<br>そらもう、ボクが好きやからに決まっとるやん</p>
+            <p>好きなもんを好きに出して店やっとる<br>そんだけや。まあゆっくりしていきや</p>
+          </div>
+          <p class="sign nw">― SO SMALL TOO BIG 店長　ジン</p>
+          <ul class="facts">
+            <li><b>NAME</b><span>ジン</span></li>
+            <li><b>WHO</b><span>中国の仙人。気を操ったり物を浮かせたり、ちょっとした仙術を使います。お皿が飛んできても驚かないでください。</span></li>
+            <li><b>COOKING</b><span>中華も洋食も得意。バーガーのパティも餃子の皮も、店長が手で作っています。</span></li>
+            <li><b>TALK</b><span>関西弁っぽいけど、関西の人ではないらしい。</span></li>
+          </ul>
+        </div>
+
+        <div class="size-card">
+          <h3>TODAY'S SIZE ― 本日の店長</h3>
+          <div class="stage" id="stage">
+            <div class="ruler" aria-hidden="true"><span>BIG</span><span>MED</span><span>SMALL</span></div>
+            <div class="owner-px" id="owner-fig" role="img" aria-label="店長のシルエット"></div>
+          </div>
+          <div class="size-steps" aria-hidden="true"><span data-i="0">SMALL</span><span data-i="1">MEDIUM</span><span data-i="2">BIG</span></div>
+          <p class="size-caption" id="size-caption" aria-live="polite"></p>
+          <div class="size-actions">
+            <button class="btn primary" id="feed" type="button">バーガーを差し入れる</button>
+            <button class="btn" id="magic" type="button">仙術を見せてもらう</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="checker" role="presentation"></div>
+
+  <!-- MAONI -->
+  <section id="maoni">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">MAONI</span><span class="ja">マオニー ― 32匹の黒猫スタッフ</span></h2>
+        <p>店内をころころ走り回っている黒い猫たちは、店長の眷属「マオニー」です。尻尾の形や小物で、ちょっとずつ見分けられます。</p>
+      </div>
+
+      <div class="cats-wrap">
+        <div class="cats" id="cats" aria-label="マオニー32匹"></div>
+        <div class="party" id="party" aria-live="polite">
+          <h3>ALL 32 MAONI!</h3>
+          <div class="slots" id="slots"></div>
+          <p class="msg">32匹ぜんぶに、あいさつしてくれてありがとう！<br>4匹で大きなマオニー、8匹で人のすがた。人型マオニー4名でお出迎えです。</p>
+          <button class="btn" id="party-close" type="button">猫にもどる</button>
+        </div>
+      </div>
+      <div class="cats-foot"><span>猫をタップするとあいさつします。たまに、ちがうことをする子もいます。</span><span>あいさつした数：<output id="greet-count">0</output> / 32<button class="replay" id="replay" type="button" hidden>もう一度 全員集合</button></span></div>
+
+      <div class="merge" aria-label="マオニーの合体">
+        <figure>
+          <div class="four" id="four"></div>
+          <figcaption><b>マオニー ×4</b>ちいさい猫</figcaption>
+        </figure>
+        <span class="arrow" aria-hidden="true">→</span>
+        <figure class="bigcat">
+          <div id="bigcat"></div>
+          <figcaption><b>大きなマオニー</b>ひとまわり大きい猫</figcaption>
+        </figure>
+        <span class="arrow" aria-hidden="true">×2 →</span>
+        <figure class="human human-wrap">
+          <div class="human-px" id="human-px" role="img" aria-label="人型マオニーのドット絵"></div>
+          <figcaption><b>人型マオニー</b>ホールスタッフ<br><span class="nw">（最大4名）</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="maoni-text">
+        <div>
+          <h3>みんな、店長が大好き</h3>
+          <p>32匹それぞれが別々の猫です。手が空くと店長のまわりに集まって、仕込み中の足元がたいへん混み合います。</p>
+        </div>
+        <div>
+          <h3>4匹で、大きなマオニー</h3>
+          <p>4匹が集まると、ひとまわり大きな猫に。高い棚のものを取るときなどに、よく合体しています。</p>
+        </div>
+        <div>
+          <h3>8匹で、人のすがたに</h3>
+          <p>人間のふるまいは、漫画やアニメをみんなで観て覚えました。人型のスタッフは最大4名。髪型が少しずつ違います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="checker" role="presentation"></div>
+
+  <!-- STORE -->
+  <section id="store">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">STORE</span><span class="ja">店内のご案内</span></h2>
+        <p>ピンク、ミント、クリームにクローム。夜はネオンがよく映えます。約100坪、2階建ての吹き抜けダイナーです。</p>
+      </div>
+      <div class="store-grid">
+        <div class="rocket-stage" id="rocket-stage" aria-hidden="true">
+          <svg viewBox="0 0 260 360">
+            <defs><clipPath id="rbody2"><path d="M130 30 C166 78 176 150 174 250 L86 250 C84 150 94 78 130 30Z"/></clipPath></defs>
+            <rect x="10" y="10" width="240" height="340" rx="120" fill="var(--bg-2)"/>
+            <use href="#spark" x="34" y="54" width="18" height="18" fill="var(--pink-strong)"/>
+            <use href="#spark" x="212" y="90" width="14" height="14" fill="var(--mint-deep)"/>
+            <use href="#spark" x="44" y="200" width="10" height="10" fill="var(--gold)"/>
+            <path d="M88 186 L48 272 L90 252Z" fill="var(--mint)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M172 186 L212 272 L170 252Z" fill="var(--mint)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M130 30 C166 78 176 150 174 250 L86 250 C84 150 94 78 130 30Z" fill="var(--chrome-light)"/>
+            <g clip-path="url(#rbody2)">
+              <rect x="70" y="0" width="120" height="72" fill="var(--pink)"/>
+              <rect x="70" y="208" width="120" height="18" fill="var(--pink)"/>
+              <rect x="146" y="0" width="40" height="260" fill="var(--chrome)" opacity=".45"/>
+            </g>
+            <path d="M130 30 C166 78 176 150 174 250 L86 250 C84 150 94 78 130 30Z" fill="none" stroke="var(--ink)" stroke-width="3"/>
+            <circle cx="130" cy="140" r="26" fill="var(--ink)" stroke="var(--ink)" stroke-width="4"/>
+            <circle cx="130" cy="140" r="22" fill="var(--mint)" opacity=".35"/>
+            <path d="M126 152 C126 142 130 136 136 132" stroke="var(--gold)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+            <circle cx="136" cy="132" r="2" fill="var(--gold)" opacity=".8"/>
+            <path d="M116 128 a18 18 0 0 1 14 -10" stroke="var(--paper)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+            <path d="M112 250 L148 250 L158 282 L102 282Z" fill="var(--chrome)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="130" cy="290" rx="72" ry="11" fill="var(--pink)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="130" y="326" text-anchor="middle" font-family="Righteous, sans-serif" font-size="11" letter-spacing="3" fill="var(--muted)">PLEASE DON'T TOUCH</text>
+          </svg>
+        </div>
+        <div>
+          <ul class="floors">
+            <li><span class="lv">CENTER</span><div><h3>ロケット</h3><p>お店のまんなかに立っている、ST のシンボル。中は公開していません。触らんといてな、とのことです。</p></div></li>
+            <li><span class="lv">1F</span><div><h3>カウンター・ボックス席</h3><p>ダイナーらしい赤……ではなくピンクのボックス席と、厨房が見えるカウンター。店長とおしゃべりしたいならカウンターへ。</p></div></li>
+            <li><span class="lv">2F</span><div><h3>吹き抜けのテーブル席</h3><p>1階とロケットを見下ろせる広い客席。団体さんはこちらへどうぞ。</p></div></li>
+            <li><span class="lv">WALL</span><div><h3>ポスターと額装の絵</h3><p>壁じゅうにポスターや絵が飾ってあります。月や星の絵が多め。</p></div></li>
+          </ul>
+          <p class="whisper">秋になると、店内にほんのり甘い花の香りがすることがあります。どこから香ってくるのか聞いても、店長はにこにこ笑うだけです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">ACCESS</span><span class="ja">店舗情報</span></h2>
+      </div>
+      <div class="access-grid">
+        <dl class="info">
+          <dt>ADDRESS</dt><dd>禍電街 2丁目2番地</dd>
+          <dt>LANDMARK</dt><dd><span class="nw">1丁目11番地</span> <span class="nw">文字屋「拾壱舎」さんの裏手</span><small>※店長の前で拾壱舎さんの話をするのは、控えめにどうぞ。</small></dd>
+          <dt>HOURS</dt><dd>11:00 – 26:00<small>ネオンが点いていたら営業中です。</small></dd>
+          <dt>CLOSED</dt><dd>不定休<small>店長が小さくなりすぎた日は、早じまいすることがあります。</small></dd>
+          <dt>SEATS</dt><dd><span class="nw">1F カウンター・ボックス席</span> / <span class="nw">2F テーブル席</span></dd>
+        </dl>
+        <div class="map" role="img" aria-label="周辺の略図。STは2丁目2番地、1丁目10番地のCafé BAR『BelleVille』と1丁目11番地の「拾壱舎」のすぐ裏にあります。">
+          <svg viewBox="0 0 400 240" aria-hidden="true">
+            <path d="M232 0 V240" stroke="var(--muted)" stroke-width="14" opacity=".35"/>
+            <rect x="96" y="16" width="118" height="116" rx="6" fill="none" stroke="var(--bg)" stroke-width="2" stroke-dasharray="5 4"/>
+            <text x="155" y="66" text-anchor="middle" font-size="12" fill="var(--bg)" opacity=".7" font-family="Zen Maru Gothic, sans-serif">1丁目10番地</text>
+            <text x="155" y="86" text-anchor="middle" font-size="12" fill="var(--bg)" font-family="Zen Maru Gothic, sans-serif">BelleVille</text>
+            <rect x="96" y="146" width="118" height="62" rx="6" fill="none" stroke="var(--bg)" stroke-width="2" stroke-dasharray="5 4"/>
+            <text x="155" y="172" text-anchor="middle" font-size="12" fill="var(--bg)" opacity=".7" font-family="Zen Maru Gothic, sans-serif">1丁目11番地</text>
+            <text x="155" y="192" text-anchor="middle" font-size="13" fill="var(--bg)" font-family="Zen Maru Gothic, sans-serif">拾壱舎</text>
+            <rect x="250" y="40" width="130" height="150" rx="10" fill="var(--pink)"/>
+            <text x="315" y="92" text-anchor="middle" font-size="11" fill="#2B2340" font-family="Zen Maru Gothic, sans-serif" font-weight="700">2丁目2番地</text>
+            <text x="315" y="124" text-anchor="middle" font-size="15" fill="#2B2340" font-family="Righteous, sans-serif" letter-spacing="1">SO SMALL</text>
+            <text x="315" y="150" text-anchor="middle" font-size="20" fill="#2B2340" font-family="Righteous, sans-serif" letter-spacing="1">TOO BIG</text>
+            <use href="#spark" x="358" y="30" width="22" height="22" fill="var(--moon)"/>
+            <text x="48" y="118" text-anchor="middle" font-size="12" fill="var(--bg)" opacity=".7" font-family="Zen Maru Gothic, sans-serif">← 1丁目</text>
+            <text x="315" y="216" text-anchor="middle" font-size="12" fill="var(--bg)" opacity=".7" font-family="Zen Maru Gothic, sans-serif">2丁目 →</text>
+            <text x="14" y="232" font-size="10" fill="var(--bg)" opacity=".5" font-family="Righteous, sans-serif" letter-spacing="2">NOT TO SCALE</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="images/st-logo.png" alt="SO SMALL TOO BIG DINER" width="800" height="416">
+  禍電街 2丁目2番地
+</footer>
+
+<script>
+/* ---------- 日本語の改行 ----------
+   Chrome / Edge：ブラウザの文節改行（word-break:auto-phrase）を使う。
+   それ以外：ひらがな→漢字・カタカナなどの切れ目と句読点のあとに <wbr> を入れ、そこでだけ折り返す。 */
+var jp = (function(){
+  var root = document.documentElement;
+  root.lang = 'ja';
+  var auto = window.CSS && CSS.supports && CSS.supports('word-break', 'auto-phrase');
+  root.setAttribute('data-jbreak', auto ? 'auto' : 'wbr');
+  if(auto) return function(){};
+  var HIRA = /[ぁ-ゟ]/, PUNCT = /[、。！？」』）】]/, NOSTART = /[ー〜…、。！？」』）】ぁぃぅぇぉっゃゅょ\s]/;
+  function split(el){
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        var p = n.parentNode;
+        if(!/[぀-ヿ一-鿿]/.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+        if(p.closest('script,style,svg,.nw,.price')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      var s = n.nodeValue, frag = document.createDocumentFragment(), start = 0;
+      for(var i=0;i<s.length-1;i++){
+        var c = s[i], d = s[i+1];
+        var brk = (PUNCT.test(c) && !PUNCT.test(d)) || (HIRA.test(c) && !HIRA.test(d) && !NOSTART.test(d));
+        if(brk){
+          frag.appendChild(document.createTextNode(s.slice(start, i+1)));
+          frag.appendChild(document.createElement('wbr'));
+          start = i+1;
+        }
+      }
+      if(start === 0) return;
+      frag.appendChild(document.createTextNode(s.slice(start)));
+      n.parentNode.replaceChild(frag, n);
+    });
+  }
+  split(document.body);
+  return split;
+})();
+
+(function(){
+  /* ---------- マオニー ---------- */
+  /* ドット絵版マオニー（21×15マス）。1マス＝1ピクセルのSVGで描く */
+  var BODY = [
+    '..k.......k..',
+    '..kk.....kk..',
+    '..kkk...kkk..',
+    '.kkkkkkkkkkk.',
+    'kkkkkkkkkkkkk',
+    'kkkeekkkeekkk',
+    'kkkeekkkeekkk',
+    'kkkkkkkkkkkkk',
+    'kkkkkkkkkkkkk',
+    'kkkkkkkkkkkkk',
+    '.kkkkkkkkkkk.',
+    '..kkkkkkkkk..',
+    '..kk.....kk..'
+  ];
+  var tails = {
+    fluffy:[[14,10],[15,10],[15,9],[16,9],[16,8],[17,8],[16,7],[17,7],[16,6],[17,6],[18,6],[16,5],[17,5],[18,5],[17,4]],
+    long:  [[14,10],[15,10],[16,9],[17,8],[17,7],[17,6],[17,5],[18,4],[18,3]],
+    short: [[14,10],[15,10],[15,9]],
+    curl:  [[14,10],[15,10],[16,10],[17,9],[18,8],[18,7],[17,6],[16,6],[16,7]],
+    hook:  [[14,10],[15,10],[16,9],[16,8],[16,7],[16,6],[17,5],[18,5]]
+  };
+  var tailKeys = Object.keys(tails);
+  var accs = ['none','ribbon','none','ring','bell','none','star','ribbon','none','ring'];
+  var ACC = {
+    ribbon:[[11,1,'p'],[13,1,'p'],[11,2,'p'],[12,2,'P'],[13,2,'p'],[11,3,'p'],[13,3,'p']],
+    ring:  [[15,9,'g'],[15,10,'g'],[15,11,'g']],
+    bell:  [[6,10,'g'],[7,10,'g'],[8,10,'g'],[7,11,'g']],
+    star:  [[1,1,'m'],[0,2,'m'],[1,2,'m'],[2,2,'m'],[1,3,'m']]
+  };
+  var COLOR = {k:'var(--cat)', e:'var(--cat-eye)', o:'var(--cat-line)', p:'var(--pink)', P:'var(--pink-strong)', g:'var(--gold)', m:'var(--moon)'};
+  var W = 21, H = 15;
+
+  function cat(i, big){
+    var t = tailKeys[(i*3 + (i>>2)) % tailKeys.length];
+    var a = big ? 'none' : accs[(i*7) % accs.length];
+    var g = [], x, y;
+    for(y=0;y<H;y++){ g.push([]); for(x=0;x<W;x++) g[y].push('.'); }
+    BODY.forEach(function(row, r){
+      for(var c=0;c<row.length;c++) if(row[c] !== '.') g[r+1][c+1] = row[c];
+    });
+    // 眠そうな目の子：目の上半分をつぶす
+    if(i % 5 === 2){ g[6][4] = g[6][5] = g[6][9] = g[6][10] = 'k'; }
+    tails[t].forEach(function(p){ g[p[1]][p[0]] = 'k'; });
+    // 輪郭（ダークモードで黒猫が背景に溶けないように）
+    for(y=0;y<H;y++) for(x=0;x<W;x++){
+      if(g[y][x] !== '.') continue;
+      if((g[y-1]&&g[y-1][x]==='k') || (g[y+1]&&g[y+1][x]==='k') || g[y][x-1]==='k' || g[y][x+1]==='k') g[y][x] = 'o';
+    }
+    if(ACC[a]) ACC[a].forEach(function(p){ g[p[1]][p[0]] = p[2]; });
+    var s = '<svg viewBox="0 0 '+W+' '+H+'" shape-rendering="crispEdges" aria-hidden="true">';
+    for(y=0;y<H;y++){
+      x = 0;
+      while(x < W){
+        var ch = g[y][x], run = 1;
+        while(x+run < W && g[y][x+run] === ch) run++;
+        if(ch !== '.') s += '<rect x="'+x+'" y="'+y+'" width="'+run+'" height="1" fill="'+COLOR[ch]+'"/>';
+        x += run;
+      }
+    }
+    return s + '</svg>';
+  }
+
+  /* 人型マオニー（ホールスタッフ）のドット絵：横48マス。本体と輪郭は猫のマオニーと同じ色 */
+  var HUMAN = [
+    '......................kk.k......................',
+    '.................k...kkkkkkkk......kkkk.........',
+    '................kkkkkkkkkkkkkk....kkkkkk........',
+    '.................kkkkkkkkkkkkk....kkkkkk........',
+    '.................kkkkkkkkkkkkk....kkkkkk........',
+    '.................kkkkkkkkkkkkkk...kkkkkk........',
+    '.................kkkkkkkkkkkkkk...kkkkkk.....kk.',
+    '...............kkkkkkkkkkkkkkkkkk.kkkkkkkkkkkkkk',
+    '..................kkkkkkkkkkkkkk..kkkkkkkkkkkkk.',
+    '.............k...kkkkkkkkkkkkkkkk.kkkkkkkkkkkk..',
+    '............k.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....',
+    '............kk..kkkkkkkkkkkkkkk.kkkkkkkkkk......',
+    '............kkkkkkkkkkkkkkkkkkk..kkkkkkkk.......',
+    '.............kkkkkkkkkkkkkkkkkkk...kkkk.........',
+    '..kkkkkkk....kkkkkkkkkkkkkkkkkkkk..kkk..........',
+    'kkkkkkkkkk..kkkkkkkkkkkkkkkkkkkkk.kkk...........',
+    'kkkkkkkkkkk...kkkkkkkkkkkkkkkkkkkkkkk...........',
+    'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........',
+    '.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........',
+    '.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+    '.kkkkkkkkkkkk...kkkkkkkkkkkkkkkkkkkk............',
+    '...kkkkkkkkkkk..kkkkkkkkkkkkkkkk................',
+    '...kkkkkkkkkk....kkkkkkkkkkkkkkkkkk.............',
+    '....kkkkkkk...kkkkkkkkkkkkkkkkkk................',
+    '.....k.........kkkkkkkkkkkkkkkkkk...............',
+    '..............kkkkkkkkkkkkkkkkkk................',
+    '............kkkkkkkkkkkkkkkkkkkkk...............',
+    '..........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+    '........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+    '.....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+    '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+    '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+    '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......',
+    '.....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......',
+    '......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.....',
+    '.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+    '.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...',
+    '.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...',
+    '.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....',
+    '.........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....',
+    '........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+    '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+    '....kkkkkkkkkkkkkkkkkkkkkkkkkk.kkkkk............',
+    '.....kkkkkkk....kkkkkkkkkkkkk...................',
+    '......kkkkk......kkkkkkkkkkkk...................',
+    '.....kkkkkk..........kkkkkkkk...................',
+    '.....kkkkk............kkkkkk....................',
+    '......................kkkkkk....................',
+    '.....................kkkkkk.....................',
+    '....................kkkkkkk.....................',
+    '....................kkkkkk......................',
+    '....................kkkkkk......................',
+    '....................kkkkk.......................',
+    '....................kkkk........................',
+    '....................kkkk........................',
+    '....................kkkk........................',
+    '...................kkkk.........................',
+    '..................kkkkk.........................',
+    '..................kkkkk.........................',
+    '..................kkkkk.........................',
+    '.................kkkkkk.........................',
+    '.................kkkkk..........................',
+    '.................kkkkk..........................',
+    '................kkkkkk..........................',
+    '................kkkkkk..........................',
+    '................kkkkk...........................',
+    '................kkkkk...........................',
+    '...............kkkkkk...........................',
+    '...............kkkkkk...........................',
+    '..............kkkkkkk...........................',
+    '............kkkkkkkkk...........................',
+    '............kkkkkkkkk...........................',
+    '............kkk.kkkkk...........................',
+    '................kkkkkk..........................',
+    '...............kkkkkkkk.........................',
+    '...............kkkkkkkk.........................',
+    '...............kkk.kk...........................',
+    '...............kk..kk...........................'
+  ];
+  // 'k' のマスを fill 色で塗り、その外側に猫と同じ輪郭線を ring マス分付ける（省略時は1マス）
+  function pixelArt(rows, fill, ring){
+    ring = ring || 1;
+    var w = rows[0].length + ring*2, h = rows.length + ring*2, g = [], x, y;
+    for(y=0;y<h;y++){ g.push([]); for(x=0;x<w;x++) g[y].push('.'); }
+    rows.forEach(function(row, r){ for(var c=0;c<row.length;c++) if(row[c]==='k') g[r+ring][c+ring] = 'k'; });
+    for(var n=0;n<ring;n++){
+      var grow = [];
+      for(y=0;y<h;y++) for(x=0;x<w;x++){
+        if(g[y][x] !== '.') continue;
+        var nb = [g[y-1]&&g[y-1][x], g[y+1]&&g[y+1][x], g[y][x-1], g[y][x+1]];
+        if(nb.indexOf('k') >= 0 || nb.indexOf('o') >= 0) grow.push([x,y]);
+      }
+      grow.forEach(function(q){ g[q[1]][q[0]] = 'o'; });
+    }
+    var s = '<svg viewBox="0 0 '+w+' '+h+'" shape-rendering="crispEdges" aria-hidden="true">';
+    for(y=0;y<h;y++){
+      x = 0;
+      while(x < w){
+        var ch = g[y][x], run = 1;
+        while(x+run < w && g[y][x+run] === ch) run++;
+        if(ch !== '.') s += '<rect x="'+x+'" y="'+y+'" width="'+run+'" height="1" fill="'+(ch==='k' ? fill : COLOR[ch])+'"/>';
+        x += run;
+      }
+    }
+    return s + '</svg>';
+  }
+  function humanPixel(){ return pixelArt(HUMAN, COLOR.k); }
+  document.getElementById('human-px').innerHTML = humanPixel();
+
+  var box = document.getElementById('cats');
+  var countEl = document.getElementById('greet-count');
+  var greeted = {};
+  var html = '';
+  for(var i=0;i<32;i++){
+    var no = (i+1<10?'0':'')+(i+1);
+    html += '<button class="cat" type="button" data-i="'+i+'" aria-label="マオニー No.'+no+'">'+cat(i)+'<span>No.'+no+'</span></button>';
+  }
+  box.innerHTML = html;
+  // ふだんはぴょんと跳ねるだけ。ときどき、ちがうことをする子がいる
+  var moves = [
+    {m:'spin',  say:'くるっ'},
+    {m:'roll',  say:'ころころ'},
+    {m:'nobi',  say:'のび〜'},
+    {m:'shake', say:'ぷるぷる'},
+    {m:'sleep', say:'zzz…'},
+    {m:'jump',  say:'!?'},
+    {m:'flip',  say:'にゃっ'},
+    {m:'hide',  say:'…かくれた'},
+    {m:'hop',   say:'♡'},
+    {m:'hop',   say:'みんな〜', friends:true}
+  ];
+  var cats = box.children;
+  function act(b, m, say){
+    var ms = ['m-hop','m-spin','m-roll','m-nobi','m-shake','m-sleep','m-jump','m-flip','m-hide'];
+    for(var j=0;j<ms.length;j++) b.classList.remove(ms[j]);
+    void b.offsetWidth;
+    b.classList.add('m-'+m);
+    if(say){
+      var old = b.querySelector('.bubble'); if(old) old.remove();
+      var s = document.createElement('span');
+      s.className = 'bubble'; s.textContent = say;
+      b.appendChild(s);
+      setTimeout(function(){ if(s.parentNode) s.remove(); }, 1700);
+    }
+  }
+  box.addEventListener('click', function(e){
+    var b = e.target.closest('.cat'); if(!b) return;
+    var r = Math.random();
+    if(r < 0.03){
+      act(b, 'jump', '店長どこ〜？');
+    } else if(r < 0.4){
+      var mv = moves[Math.floor(Math.random()*moves.length)];
+      act(b, mv.m, mv.say);
+      if(mv.friends){
+        var n = +b.dataset.i, cols = getComputedStyle(box).gridTemplateColumns.split(' ').length;
+        [n-1, n+1, n-cols, n+cols].forEach(function(f, d){
+          if(f>=0 && f<32 && Math.abs((f%cols)-(n%cols))<=1){
+            setTimeout(function(){ act(cats[f], 'hop'); }, 120 + d*90);
+          }
+        });
+      }
+    } else {
+      act(b, 'hop');
+    }
+    if(partying) return;
+    var before = Object.keys(greeted).length;
+    greeted[b.dataset.i] = true;
+    var now = Object.keys(greeted).length;
+    countEl.textContent = now;
+    if(now === 32 && before === 31) setTimeout(function(){ celebrate(b); }, 500);
+  });
+
+  /* ---------- 32/32：全員集合 ---------- */
+  var party = document.getElementById('party');
+  var slotsEl = document.getElementById('slots');
+  var replay = document.getElementById('replay');
+  var partying = false, timers = [];
+  var hairs = [
+    // ボブ
+    '<path d="M13 34 C10 8 50 8 47 34 L47 44 L41 44 L41 26 L19 26 L19 44 L13 44Z"/>',
+    // ポニーテール
+    '<path d="M15 30 C15 11 45 11 45 30 C41 21 19 21 15 30Z"/><path d="M43 18 C60 20 60 46 50 56 C53 42 50 30 42 25Z"/>',
+    // おだんご
+    '<circle cx="17" cy="14" r="7.5"/><circle cx="43" cy="14" r="7.5"/><path d="M15 30 C15 11 45 11 45 30 C41 21 19 21 15 30Z"/>',
+    // ショート＋アホ毛
+    '<path d="M14 31 C13 11 47 11 46 31 L42 24 L37 28 L32 22 L26 28 L21 23Z"/><path d="M30 15 C27 4 40 2 37 10" fill="none" stroke="var(--cat)" stroke-width="2.5" stroke-linecap="round"/>'
+  ];
+  var says = ['いらっしゃいませ！','ありがとう！','また来てね','店長〜！'];
+  function human(v){
+    return '<svg viewBox="0 0 60 130" aria-hidden="true">' +
+      '<circle cx="30" cy="31" r="15" fill="var(--cat)" stroke="var(--cat-line)" stroke-width="1.2"/>' +
+      '<g fill="var(--cat)" stroke="var(--muted)" stroke-width="1.2" stroke-linejoin="round">'+hairs[v]+'</g>' +
+      '<circle cx="24" cy="33" r="2" fill="var(--cat-eye)"/><circle cx="36" cy="33" r="2" fill="var(--cat-eye)"/>' +
+      '<path d="M10 130 L12 66 C12 54 20 48 30 48 C40 48 48 54 48 66 L50 130Z" fill="var(--cat)" stroke="var(--cat-line)" stroke-width="1.2"/>' +
+      '<path d="M22 62 L38 62 L36 102 L24 102Z" fill="var(--pink)"/></svg>';
+  }
+  var sh = '';
+  for(var q=0;q<4;q++){
+    var dl = (q*0.12)+'s';
+    sh += '<div class="slot">' +
+      '<div class="bc l" style="transition-delay:'+dl+'">'+cat(q*8,true)+'</div>' +
+      '<div class="bc r" style="transition-delay:'+dl+'">'+cat(q*8+4,true)+'</div>' +
+      '<div class="hm" style="transition-delay:'+dl+'">'+human(q)+'</div>' +
+      '<span class="say" style="transition-delay:'+(q*0.15)+'s">'+says[q]+'</span></div>';
+  }
+  slotsEl.innerHTML = sh;
+  for(var t=0;t<10;t++){
+    var tw = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    tw.setAttribute('class','twinkle'); tw.setAttribute('aria-hidden','true');
+    tw.innerHTML = '<use href="#spark" width="14" height="14" fill="'+['var(--pink-strong)','var(--mint-deep)','var(--gold)'][t%3]+'"/>';
+    tw.style.left = (6 + (t*37)%88) + '%';
+    tw.style.top = (8 + (t*53)%80) + '%';
+    tw.style.animationDelay = (t*0.23) + 's';
+    party.appendChild(tw);
+  }
+
+  function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
+  function celebrate(from){
+    if(partying) return;
+    partying = true;
+    // 1. 全員でウェーブ
+    act(from, 'jump', '全員集合〜！');
+    for(var w=0; w<32; w++) (function(w){ later(function(){ act(cats[w], 'hop'); }, 300 + w*35); })(w);
+    // 2. 8匹ずつ、4つの場所へ集まる
+    later(function(){
+      var cols = getComputedStyle(box).gridTemplateColumns.split(' ').length;
+      var per = cols / 4;
+      var slots = slotsEl.children;
+      for(var k=0;k<32;k++){
+        var g = Math.floor((k % cols) / per);
+        var cr = cats[k].getBoundingClientRect(), sr = slots[g].getBoundingClientRect();
+        cats[k].style.setProperty('--dx', (sr.left + sr.width/2 - cr.left - cr.width/2) + 'px');
+        cats[k].style.setProperty('--dy', (sr.top + sr.height*0.7 - cr.top - cr.height/2) + 'px');
+      }
+      box.classList.add('gathering');
+    }, 1700);
+    // 3. 大きなマオニー8体 → 人型マオニー4名
+    later(function(){ fitParty(); party.classList.add('show'); }, 2300);
+    later(function(){ party.classList.add('phase-a'); }, 2500);
+    later(function(){ party.classList.add('phase-b'); }, 3900);
+    later(function(){ party.classList.add('phase-c'); document.getElementById('party-close').focus({preventScroll:true}); }, 4700);
+  }
+  // 演出パネルの中身が猫の枠より高いときは、枠のほうを伸ばしてボタンがはみ出さないようにする
+  function fitParty(){
+    var cs = getComputedStyle(party), need = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    var kids = party.children, n = 0;
+    for(var k=0;k<kids.length;k++){
+      if(kids[k].classList.contains('twinkle')) continue;
+      need += kids[k].offsetHeight; n++;
+    }
+    need += (n-1) * parseFloat(cs.rowGap || cs.gap || 10);
+    if(need > box.offsetHeight) box.style.minHeight = Math.ceil(need) + 'px';
+  }
+  function endParty(){
+    timers.forEach(clearTimeout); timers = [];
+    party.classList.remove('show','phase-a','phase-b','phase-c');
+    box.classList.remove('gathering');
+    box.style.minHeight = '';
+    for(var k=0;k<32;k++) (function(k){ later(function(){ act(cats[k], 'hop'); }, 450 + k*25); })(k);
+    later(function(){ partying = false; }, 450);
+    replay.hidden = false;
+  }
+  document.getElementById('party-close').addEventListener('click', endParty);
+  replay.addEventListener('click', function(){ if(!partying) celebrate(cats[Math.floor(Math.random()*32)]); });
+
+  var four = '';
+  for(var k=0;k<4;k++) four += cat(k*5+1);
+  document.getElementById('four').innerHTML = four;
+  document.getElementById('bigcat').innerHTML = cat(0,true);
+
+  /* ---------- 店長サイズ ---------- */
+  /* 店長のドット絵（元画像10pxを1マスにそろえた縮尺なので、大中小の差がそのまま出る） */
+  var OWNER = [
+    [
+      '...kkkkkkk...........',
+      '..kkkkkkkkkkkk.....k.',
+      '..kkkkkkkkkkk...kkkkk',
+      '..kkkkkkkkkkkk.kkkkk.',
+      '..kkkkkkkkkkkkkkkkkk.',
+      '.kkkkkkkkkkkkkkkkkk..',
+      '.kkkkkkkkkkkkkkkkk...',
+      '.kkkkkkkkkkkkkkkk....',
+      '..kkkkkkkkkkkkkkk....',
+      '...kkkkkkkkkkkkkk....',
+      '...kkkkkkkkkkkkkk....',
+      '...kkkkkkkkkkkkkkk...',
+      '...kkkkkkkkkkkkkkk...',
+      '...kkkkkkkkkkkkk.....',
+      '.kkkkkkkkkkkkk.kkk...',
+      'kkkkkkkkkkkkkk.kkkk..',
+      '.kkkkkkkkkkkkk.kkkk..',
+      '.kkkkkkkkkkkkk.kkk...',
+      '..kkkkkkkkkkkkkkk....',
+      '..kkkkkkkkkkkkkk.....',
+      '..kkkkkkkkkk.kkk.....',
+      '..kkkkkkkkkk..k......',
+      '.kkkkkkkkkk..........',
+      '.kkkkkkkkkkk.........',
+      '.kkkkkkkkkkk.........',
+      '.kkkkkkkkkkk.........',
+      '.kkkkkkkkkkk.........',
+      '..kkkkkkkkkk.........',
+      '...kkkkkkkk..........',
+      '....kkkkkk...........',
+      '...kkkkkkk...........',
+      '...kkkkkkk...........',
+      '...kkkkkk............',
+      '..kkk.kkk............',
+      '..kk...kk............',
+      '.......kk............',
+      '.......kk............'
+    ],
+    [
+      '...............k..kk..............',
+      '...............kkkkkkkk...........',
+      '...............kkkkkkkk...........',
+      '...............kkkkkkkkk..........',
+      '.............kkkkkkkkkkk..........',
+      '............kkkkkkkkkkkk..........',
+      '...........kkkkkkkkkkkkkk.........',
+      '...........kkkkkkkkkkkkkk.........',
+      '...........kkkkkkkkkkkkk..........',
+      '...........kkkkkkkkkkkkkk.........',
+      '...........kkkkkkkkkkkkkkkk.......',
+      '...........kkkkkkkkkkkkkkkkk......',
+      '...........kkkkkkkkkkkkkkkkkk.....',
+      '...........kkkkkkkkkkkkkkkkkk.....',
+      '..........kkkkkkkkkkkkkkkkkkkk....',
+      '.........kkkkkkkkkkkkkkkkkkkkk....',
+      '........kkkkkkkkkkkkkkkkkkkkkk....',
+      '.......kkkkkkkkkkkkkkkkkkkkkkk....',
+      '......kkkkkkkkkkkkkkkkkkkkkkkk....',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkk...',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkk...',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+      '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '....kkkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+      '....kkkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkk...',
+      '......kkkkkkkkkkkkkkkkkkkkkkkk....',
+      '......kkkkkkkkkkkkkkkkkkkkkkkk....',
+      '.......kkkkkkkkkkkkkkkkkkkkkk.....',
+      '........kkkkkkkkkkkkkkkkkkkk......',
+      '........kkkkkkkkkkkkkkkkkk.k......',
+      '.........kkkkkkkkkkkkkkkk..kk.....',
+      '.........kkkkkkkkkkkkkkkk..kk.....',
+      '.........kkkkkkkkkkkkkkkkk.kk.....',
+      '.........kkkkkkkkkkkkkkkkk.kk.....',
+      '.........kkkkkkkkkkkkkkkkk.kk.....',
+      '.........kkkkkkkkkkkkkkkkk.kk.....',
+      '........kkkkkkkk.kkkkkkkkkkkk.....',
+      '........kkkkkkkk.kkkkkkkkkkk......',
+      '........kkkkkkkk.kkkkkkkkkk.......',
+      '.......kkkkkkkk..kkkkkkkkkk.......',
+      '.......kkkkkkkk..kkkkkkkkkk.......',
+      '.......kkkkkkkk...kkkkkkkkkk......',
+      '.......kkkkkkkkk..kkkkkkkkkk......',
+      '.......kkkkkkkkk.kkkkkkkkkkk......',
+      '.......kkkkkkkkk.kkkkkkkkkkk......',
+      '.......kkkkkkkkk.kkkkkkkkkkk......',
+      '......kkkkkkkkkk.kkkkkkkkkkk......',
+      '......kkkkkkkkkk.kkkkkkkkkkk......',
+      '......kkkkkkkkk..kkkkkkkkkkkk.....',
+      '.......kkkkkkkk..kkkkkkkkkkkk.....',
+      '.......kkkkkkkk...kkkkkkkkkkk.....',
+      '........kkkkkk....kkkkkkkkkk......',
+      '.......kkkkk.......kkkkkkkk.......',
+      '.......kkkkk......kkkkkkkk........',
+      '.......kkkkk.......k..kkk.........',
+      '.......kkkkk.........kkkkk........',
+      '......kkkkkk.........kkkkk........',
+      '.....kkkkkkk.........kkkkk........',
+      '....kkkkkkkk........kkkkkk........',
+      '...kkkkkkkkk.........kkkkkk.......',
+      '.kkkkkkkkkkk.........kkkkkk.......',
+      'kkkkkkkkkkkk.........kkkkkk.......',
+      'kkkkkkkkkkkk.........kkkkkkk......',
+      'kkkkkkkkkk..........kkkkkkkk......',
+      '..kkkkk.............kkkkkkkk......',
+      '.....................kkkkkkk......',
+      '......................kkkkk.......'
+    ],
+    [
+      '..............................k.......................',
+      '............................kkk.......................',
+      '...........................kkkk.......................',
+      '...........................kkkkk......................',
+      '..........................kkkkkkkkkk..................',
+      '.........................kkkkkkkkkkk..................',
+      '........................kkkkkkkkkkkk..................',
+      '.......................kkkkkkkkkkkkkk.................',
+      '.......................kkkkkkkkkkkkkk.................',
+      '......................kkkkkkkkkkkkkkk.................',
+      '......................kkkkkkkkkkkkkkk.................',
+      '.....................kkkkkkkkkkkkkkkk.................',
+      '.....................kkkkkkkkkkkkkkkk.................',
+      '.....................kkkkkkkkkkkkkkkk.................',
+      '..................kkkkkkkkkkkkkkkkkkk.................',
+      '..................kkkkkkkkkkkkkkkkkkk.................',
+      '..................kkkkkkkkkkkkkkkkkkkk................',
+      '................kkkkkkkkkkkkkkkkkkkkkkk...............',
+      '.............kkkkkkkkkkkkkkkkkkkkkkkkkkk..............',
+      '............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+      '............kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.............',
+      '............kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.............',
+      '............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk............',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........',
+      '...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........',
+      '..........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '..........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '..........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '.........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........',
+      '........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........',
+      '......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '.....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '...kkkkkkkkkk...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '..kkkkkkkkkkk....kkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '..kkkkkkkkkk.....kkkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '..kkkkkkkkkk......kkkkkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '..kkkkkkkkkk.......kkkkkkkkkkkkkkkkkkkkkkkkkk.........',
+      '.kkkkkkkkkkk.........kkkkkkkkkkkkkkkkkkkkkkkkk........',
+      '.kk.kkkkkkkk..........kkkkkkkkkkkkkkkkkkkkkkkk........',
+      '.kk.kkkkkkkk..........kkkkkkkkkkkkkkkkkkkkkkkk........',
+      'kk..kkkkkkkk..........kkkkkkkkkkkkkkkkkkkkkkkk........',
+      'kk..kkkkkkkk..........kkkkkkkkkkkkkkkkkkkkkkkk........',
+      'kk..kkkkkkkk.........kkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+      'kk...kkk.kkkk........kkkkkkkkkkkkkkkkkkkkkkkkkkk......',
+      'k....kkk.kkkkk.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...',
+      'kk...kkkk..kkk.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..',
+      '.kk...kkk....kkkk....kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '......kkk............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
+      '.......kkk...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
+      '........kk...........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+      '.........kkk.........kkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+      '..........kkkk.......kkkkkkkkkkkkkkkkkkkkkkkkkk.......',
+      '.....................kkkkkkkkkkkkkkkkkkkkkkkkkkk......',
+      '.....................kkkkkkkkkkkkkkkkkkkkkkkkkkk......',
+      '.....................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.....',
+      '.....................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.....',
+      '.....................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.....',
+      '....................kkkkkkkkkkkkkkkkkkkkkk.kkkkkkk....',
+      '....................kkkkkkkkkkkkkkkkkkkkkk...kkkkk....',
+      '....................kkkkkkkkkkkkkkkkkkkkkk............',
+      '....................kkkkkkkkkkkkkkkkkkkkkk............',
+      '....................kkkkkkkkkkkkkkkkkkkkkk............',
+      '....................kkkkkkkkkkkkkkkkkkkkkk............',
+      '....................kkkkkkkkkkkkkkkkkkkkkkk...........',
+      '....................kkkkkkkkkkkkkkkkkkkkkkk...........',
+      '....................kkkkkkkkkkkkkkkkkkkkkkk...........',
+      '....................kkkkkkkkkkkkkkkkkkkkkkk...........',
+      '...................kkkkkkkkkkkkkkkkkkkkkkkk...........',
+      '...................kkkkkkkkkkkkkkkkkkkkkkkk...........',
+      '...................kkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '...................kkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '...................kkkkkkkkkkkkkkkkkkkkkkkkk..........',
+      '...................kkk.kkkkkkkkk...kkkkkkkkk..........',
+      '....................k...kkkkkk.....kkkkkkkk...........',
+      '........................kkkk.......kkkkk..............',
+      '........................kkkk.......kkkkk..............',
+      '........................kkkk.......kkkkk..............',
+      '.......................kkkkk.......kkkkkk.............',
+      '.......................kkkk........kkkkkkk............',
+      '......................kkkkk........kkkkkkkk...........',
+      '......................kkkkk........kkkkkkkkk..........',
+      '.....................kkkkkk...........kkkkkkkk........',
+      '.....................kkkkkk...........kkkkkkkk........',
+      '.....................kkkkk..............kkkkk.........'
+    ]
+  ];
+  var OWNER_FILL = '#14125A';
+  var OWNER_RING = 1;
+  var OWNER_DOT = 220 / (OWNER[2].length + OWNER_RING*2);  // BIG がステージの高さ220pxに収まる1マスの大きさ
+  var ownerSvgs = OWNER.map(function(rows){
+    return pixelArt(rows, OWNER_FILL, OWNER_RING).replace('<svg ', '<svg style="height:'+Math.round((rows.length+OWNER_RING*2)*OWNER_DOT)+'px" ');
+  });
+
+  var sizes = [
+    {scale:.52, text:'SMALL ― 少年くらいの大きさ。お腹が空いているか、仙術を使いすぎたのかも。なにか注文してあげてください。'},
+    {scale:.76, text:'MEDIUM ― いつものサイズ。ふつうに食べて、ふつうに働いている日。'},
+    {scale:1,   text:'BIG ― 満腹。大柄な大人の男性くらい。……ただし、ずっとこのままではいられません。'}
+  ];
+  var level = 1;
+  var fig = document.getElementById('owner-fig');
+  var cap = document.getElementById('size-caption');
+  var steps = document.querySelectorAll('.size-steps span');
+  var feed = document.getElementById('feed');
+  var magic = document.getElementById('magic');
+  function render(){
+    fig.innerHTML = ownerSvgs[level];
+    cap.textContent = sizes[level].text;
+    jp(cap);
+    for(var j=0;j<steps.length;j++) steps[j].classList.toggle('on', j===level);
+    feed.disabled = level===2;
+    magic.disabled = level===0;
+  }
+  feed.addEventListener('click', function(){ if(level<2){level++;render();} });
+  magic.addEventListener('click', function(){ if(level>0){level--;render();} });
+  render();
+
+  /* ---------- 秋の花びら ---------- */
+  var stage = document.getElementById('rocket-stage');
+  for(var p=0;p<9;p++){
+    var d = document.createElement('i');
+    d.className = 'petal';
+    d.style.left = (18 + p*8 + (p%3)*4) + '%';
+    d.style.animationDelay = (p*1.3) + 's';
+    d.style.animationDuration = (9 + (p%4)*1.5) + 's';
+    stage.appendChild(d);
+  }
+})();
+</script>
+</body>
+</html>
